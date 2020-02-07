@@ -1,0 +1,116 @@
+#!/bin/bash
+# sysinfo.run
+SECENEK=/tmp/secenek.txt.$$
+STDOUT=/tmp/stdout.txt.$$
+STDERR=/tmp/stderr.txt.$$
+BACKTITLE="nano Kurulum uygulaması ( bash script ) v.1.0.0"
+DURUM=0
+
+function check_app () {
+if [ -f "/usr/bin/nano" ]
+  then
+    DURUM=1
+  else
+    DURUM=0
+fi
+}
+function show_reason () {
+dialog --begin 3 3 --clear --backtitle "$BACKTITLE" --title "Kurulum bilgisi STDOUT" \
+--textbox "$STDOUT" 30 150
+dialog --begin 3 3 --clear --backtitle "$BACKTITLE" --title "Kurulum bilgisi STDERR" \
+--textbox "$STDERR" 30 150
+app_run
+}
+function app_welcome () {
+dialog --clear --backtitle "$BACKTITLE" --title "nana Kurulum" --msgbox "nano text editör kurulumuna hoş geldiniz." 6 50
+}
+function remove_nano () {
+dialog --clear --backtitle "$BACKTITLE" --title "Kaldırılsın mı?" --yesno "nano sistemde kurulu kaldırılsın mı?" 7 60
+
+case $? in
+  0)
+   dialog --backtitle "$BACKTITLE" --title "İşletiliyor." --infobox "nano sistemden kaldırılıyor. Lütfen bekleyiniz..." 4 55; sudo apt-get -y remove nano >$STDOUT 2>$STDERR
+   dialog --backtitle "$BACKTITLE" --title "Bitti." --infobox "İşlem tamam. Devam etmek için bir tuşa basınız..." 4 55; read
+   show_reason
+  ;;
+  1)
+  app_run
+  ;;
+  255)
+  app_run
+  ;;
+ esac
+}
+function install_nano () {
+dialog --backtitle "$BACKTITLE" --title "İşletiliyor" --infobox "nano kuruluyor. Lütfen bekleyiniz..." 4 55;sudo apt-get -y install nano >$STDOUT 2>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Bitti" --infobox "Kurulum tamamlandı.Devam etmek için her hangi bir tuşa basınız..." 4 55 ;read
+show_reason
+}
+
+function app_exit() {
+dialog --backtitle "$BACKTITLE" --title "Çıkış" --infobox "Program sonlandırılıyor.Devam etmek için her hangi bir tuşa basınız..." 4 55 ;read
+break
+clear
+}
+function app_run(){
+while true
+do
+dialog --clear --backtitle "$BACKTITLE" --title "[ ANA MENÜ ]" \
+--menu "nan kurulum uygulaması seçenekleri. yön tuşları, harfler ve rakamları kullanabilirsiniz." 15 55 6 \
+K "Kur" \
+R "Kaldır" \
+E "Kontrol et" \
+S "Programı sonlandır" 2>"${SECENEK}"
+
+case $? in
+  1)
+  app_exit
+  ;;
+  255)
+  app_exit
+  ;;
+esac
+
+sonuc=$(<"${SECENEK}")
+
+case $sonuc in
+  K) 
+  check_app
+  if [ $DURUM -eq 1 ]
+  then
+  remove_nano
+  else
+  install_nano
+  fi
+  ;;
+  R)
+  check_app
+  if [ $DURUM -eq 1 ]
+  then
+  remove_nano
+  else
+  install_nano
+  fi
+  ;;
+  E) 
+  check_app
+  if [ $DURUM -eq 1 ]
+  then
+  dialog --backtitle "$BACKTITLE" --title "Durum Bilgisi" --infobox "nano sistemde kurulu.Devam etmek için bir tuşa basınız..." 4 55; read
+  else
+  dialog --backtitle "$BACKTITLE" --title "Durum Bilgisi" --infobox "nano sistemde kurulu değil!.Devam etmek için bir tuşa basınız..." 4 55; read
+  fi
+  ;;
+  S) 
+  break
+  ;;
+esac
+
+done
+
+}
+
+# ------------------ RUN ------------------ #
+app_welcome
+app_run
+app_exit

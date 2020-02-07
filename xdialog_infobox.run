@@ -1,0 +1,3 @@
+#!/bin/bash
+# xDialog infobox
+Xdialog --rc-file bluebox.rc --msgbox "--rc-file demonstration." 0 0

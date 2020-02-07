@@ -1,0 +1,180 @@
+#!/bin/bash
+# lxde tüm uygulamaları ile kurulacak
+STDOUT=/tmp/stdout.txt.$$
+STDERR=/tmp/stderr.txt.$$
+STDMEN=/tmp/stdmen.txt.$$
+BACKTITLE="Lxde Masa Üstü Ortamı Kurulum Uygulaması. (Linux Mint 14 nadia (Xfce) Üzerinde.)"
+
+
+function lxde_kur () {
+
+dialog --backtitle "$BACKTITLE" --title "Kurulsun mu ?" \
+--yesno "Lxde Masaüstü Ortamına ait uygulamalar kurulsun mu?" 7 60
+# 0 Yes
+# 1 No
+# 255 Cansel
+case $? in
+	0)
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kuruluyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ lxde ] kuruluyor (1/33). Lütfen bekleyiniz... " 5 85;apt-get -y install lxde >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kuruluyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ lxterminal ] kuruluyor (2/33). Lütfen bekleyiniz... " 5 85;apt-get -y install lxterminal >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kuruluyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ lxpanel ] kuruluyor (3/33). Lütfen bekleyiniz... " 5 85;apt-get -y install lxpanel >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kuruluyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ lxdm ] kuruluyor (4/33). Lütfen bekleyiniz... " 5 85;apt-get -y install lxdm >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kuruluyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ lxsession-edit ] kuruluyor (5/33). Lütfen bekleyiniz... " 5 85;apt-get -y install lxsession-edit >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kuruluyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ lxappearance ] kuruluyor (6/33). Lütfen bekleyiniz... " 5 85;apt-get -y install lxappearance >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kuruluyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ lxde-icon-theme ] kuruluyor (7/33). Lütfen bekleyiniz... " 5 85;apt-get -y install lxde-icon-theme >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kuruluyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ lxsession ] kuruluyor (8/33). Lütfen bekleyiniz... " 5 85;apt-get -y install lxsession >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kuruluyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ libmenu-cache1 ] kuruluyor (9/33). Lütfen bekleyiniz... " 5 85;apt-get -y install libmenu-cache1 >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kuruluyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ libmenu-cache1-dev ] kuruluyor (10/33). Lütfen bekleyiniz... " 5 85;apt-get -y install libmenu-cache1-dev >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kuruluyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ lxappearance-dbg ] kuruluyor (11/33). Lütfen bekleyiniz... " 5 85;apt-get -y install lxappearance-dbg >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kuruluyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ lxappearance-obconf ] kuruluyor (12/33). Lütfen bekleyiniz... " 5 85;apt-get -y install lxappearance-obconf >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kuruluyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ lxappearance-obconf-dbg ] kuruluyor (13/33). Lütfen bekleyiniz... " 5 85;apt-get -y install lxappearance-obconf-dbg >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kuruluyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ lxde-common ] kuruluyor (14/33). Lütfen bekleyiniz... " 5 85;apt-get -y install lxde-common >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kuruluyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ lxde-core ] kuruluyor (15/33). Lütfen bekleyiniz... " 5 85;apt-get -y install lxde-core >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kuruluyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ lxinput ] kuruluyor (16/33). Lütfen bekleyiniz... " 5 85;apt-get -y install lxinput >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kuruluyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ lxinput-dbg ] kuruluyor (17/33). Lütfen bekleyiniz... " 5 85;apt-get -y install lxinput-dbg >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kuruluyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ lxlauncher ] kuruluyor (18/33). Lütfen bekleyiniz... " 5 85;apt-get -y install lxlauncher >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kuruluyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ lxlauncher-dbg ] kuruluyor (19/33). Lütfen bekleyiniz... " 5 85;apt-get -y install lxlauncher-dbg >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kuruluyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ lxmenu-data ] kuruluyor (20/33). Lütfen bekleyiniz... " 5 85;apt-get -y install lxmenu-data >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kuruluyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ lxmusic ] kuruluyor (21/33). Lütfen bekleyiniz... " 5 85;apt-get -y install lxmusic >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kuruluyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ lxmusic-dbg ] kuruluyor (22/33). Lütfen bekleyiniz... " 5 85;apt-get -y install lxmusic-dbg >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kuruluyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ lxpanel-dbg ] kuruluyor (23/33). Lütfen bekleyiniz... " 5 85;apt-get -y install lxpanel-dbg >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kuruluyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ lxpolkit ] kuruluyor (24/33). Lütfen bekleyiniz... " 5 85;apt-get -y install lxpolkit >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kuruluyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ lxpolkit-dbg ] kuruluyor (25/33). Lütfen bekleyiniz... " 5 85;apt-get -y install lxpolkit-dbg >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kuruluyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ lxrandr ] kuruluyor (26/33). Lütfen bekleyiniz... " 5 85;apt-get -y install lxrandr >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kuruluyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ lxrandr-dbg ] kuruluyor (27/33). Lütfen bekleyiniz... " 5 85;apt-get -y install lxrandr-dbg >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kuruluyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ lxsession-dbg ] kuruluyor (28/33). Lütfen bekleyiniz... " 5 85;apt-get -y install lxsession-dbg >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kuruluyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ lxshortcut ] kuruluyor (29/33). Lütfen bekleyiniz... " 5 85;apt-get -y install lxshortcut >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kuruluyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ lxshortcut-dbg ] kuruluyor (30/33). Lütfen bekleyiniz... " 5 85;apt-get -y install lxshortcut-dbg >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kuruluyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ lxtask ] kuruluyor (31/33). Lütfen bekleyiniz... " 5 85;apt-get -y install lxtask >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kuruluyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ lxtask-dbg ] kuruluyor (32/33). Lütfen bekleyiniz... " 5 85;apt-get -y install lxtask-dbg >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kuruluyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ lxterminal-dbg ] kuruluyor (33/33). Lütfen bekleyiniz... " 5 85;apt-get -y install lxterminal-dbg >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Kurulum Bitti." --infobox "LXDE Masa Üstü Ortamı kurulumu bitti;\nLütfen devam etmek için her hangi bir tuşa basınız... " 5 85;read
+	islem
+	 ;;
+	1) 
+	islem
+	;;
+	255) 
+	islem
+	;;
+esac
+
+}
+
+function lxde_kaldir () {
+
+
+dialog --backtitle "$BACKTITLE" --title "Kaldırılsın mı ?" \
+--yesno "Lxde Masaüstü Ortamına ait uygulamalar kkaldırılsın mı?" 7 60
+# 0 Yes
+# 1 No
+# 255 Cansel
+case $? in
+	0)
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kaldırılıyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ lxde ] kaldırılıyor (1/33). Lütfen bekleyiniz... " 5 85;apt-get -y remove lxde >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kaldırılıyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ lxterminal ] kaldırılıyor (2/33). Lütfen bekleyiniz... " 5 85;apt-get -y remove lxterminal >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kaldırılıyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ lxpanel ] kaldırılıyor (3/33). Lütfen bekleyiniz... " 5 85;apt-get -y remove lxpanel >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kaldırılıyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ lxdm ] kaldırılıyor (4/33). Lütfen bekleyiniz... " 5 85;apt-get -y remove lxdm >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kaldırılıyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ lxsession-edit ] kaldırılıyor (5/33). Lütfen bekleyiniz... " 5 85;apt-get -y remove lxsession-edit >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kaldırılıyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ lxappearance ] kaldırılıyor (6/33). Lütfen bekleyiniz... " 5 85;apt-get -y remove lxappearance >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kaldırılıyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ lxde-icon-theme ] kaldırılıyor (7/33). Lütfen bekleyiniz... " 5 85;apt-get -y remove lxde-icon-theme >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kaldırılıyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ lxsession ] kaldırılıyor (8/33). Lütfen bekleyiniz... " 5 85;apt-get -y remove lxsession >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kaldırılıyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ libmenu-cache1 ] kaldırılıyor (9/33). Lütfen bekleyiniz... " 5 85;apt-get -y remove libmenu-cache1 >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kaldırılıyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ libmenu-cache1-dev ] kaldırılıyor (10/33). Lütfen bekleyiniz... " 5 85;apt-get -y remove libmenu-cache1-dev >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kaldırılıyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ lxappearance-dbg ] kaldırılıyor (11/33). Lütfen bekleyiniz... " 5 85;apt-get -y remove lxappearance-dbg >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kaldırılıyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ lxappearance-obconf ] kaldırılıyor (12/33). Lütfen bekleyiniz... " 5 85;apt-get -y remove lxappearance-obconf >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kaldırılıyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ lxappearance-obconf-dbg ] kaldırılıyor (13/33). Lütfen bekleyiniz... " 5 85;apt-get -y remove lxappearance-obconf-dbg >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kaldırılıyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ lxde-common ] kaldırılıyor (14/33). Lütfen bekleyiniz... " 5 85;apt-get -y remove lxde-common >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kaldırılıyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ lxde-core ] kaldırılıyor (15/33). Lütfen bekleyiniz... " 5 85;apt-get -y remove lxde-core >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kaldırılıyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ lxinput ] kaldırılıyor (16/33). Lütfen bekleyiniz... " 5 85;apt-get -y remove lxinput >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kaldırılıyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ lxinput-dbg ] kaldırılıyor (17/33). Lütfen bekleyiniz... " 5 85;apt-get -y remove lxinput-dbg >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kaldırılıyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ lxlauncher ] kaldırılıyor (18/33). Lütfen bekleyiniz... " 5 85;apt-get -y remove lxlauncher >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kaldırılıyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ lxlauncher-dbg ] kaldırılıyor (19/33). Lütfen bekleyiniz... " 5 85;apt-get -y remove lxlauncher-dbg >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kaldırılıyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ lxmenu-data ] kaldırılıyor (20/33). Lütfen bekleyiniz... " 5 85;apt-get -y remove lxmenu-data >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kaldırılıyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ lxmusic ] kaldırılıyor (21/33). Lütfen bekleyiniz... " 5 85;apt-get -y remove lxmusic >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kaldırılıyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ lxmusic-dbg ] kaldırılıyor (22/33). Lütfen bekleyiniz... " 5 85;apt-get -y remove lxmusic-dbg >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kaldırılıyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ lxpanel-dbg ] kaldırılıyor (23/33). Lütfen bekleyiniz... " 5 85;apt-get -y remove lxpanel-dbg >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kaldırılıyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ lxpolkit ] kaldırılıyor (24/33). Lütfen bekleyiniz... " 5 85;apt-get -y remove lxpolkit >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kaldırılıyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ lxpolkit-dbg ] kaldırılıyor (25/33). Lütfen bekleyiniz... " 5 85;apt-get -y remove lxpolkit-dbg >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kaldırılıyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ lxrandr ] kaldırılıyor (26/33). Lütfen bekleyiniz... " 5 85;apt-get -y remove lxrandr >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kaldırılıyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ lxrandr-dbg ] kaldırılıyor (27/33). Lütfen bekleyiniz... " 5 85;apt-get -y remove lxrandr-dbg >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kaldırılıyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ lxsession-dbg ] kaldırılıyor (28/33). Lütfen bekleyiniz... " 5 85;apt-get -y remove lxsession-dbg >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kaldırılıyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ lxshortcut ] kaldırılıyor (29/33). Lütfen bekleyiniz... " 5 85;apt-get -y remove lxshortcut >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kaldırılıyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ lxshortcut-dbg ] kaldırılıyor (30/33). Lütfen bekleyiniz... " 5 85;apt-get -y remove lxshortcut-dbg >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kaldırılıyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ lxtask ] kaldırılıyor (31/33). Lütfen bekleyiniz... " 5 85;apt-get -y remove lxtask >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kaldırılıyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ lxtask-dbg ] kaldırılıyor (32/33). Lütfen bekleyiniz... " 5 85;apt-get -y remove lxtask-dbg >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Uygulama Kaldırılıyor." --infobox "LXDE Masa Üstü Ortamı Kurucusu uygulamasına ait;\n[ lxterminal-dbg ] kaldırılıyor (33/33). Lütfen bekleyiniz... " 5 85;apt-get -y remove lxterminal-dbg >>$STDOUT 2>>$STDERR
+dialog --backtitle "$BACKTITLE" --title "Kurulum Bitti." --infobox "LXDE Masa Üstü Ortamı kaldırma işlemi bitti;\nLütfen devam etmek için her hangi bir tuşa basınız... " 5 85;read
+	islem
+	 ;;
+	1) 
+	islem
+	;;
+	255) 
+	islem
+	;;
+esac
+}	
+
+
+function karsilama() {
+dialog --backtitle "$BACKTITLE" --title "Lxde - Uygulama Kurucusu" --infobox "LXDE Masa Üstü Ortamı Kurucusu.\nBu uygulamanın çalışması için varsayılan sistem;\nLinux Mint 14 (Nadia) Xfce\nDevam etmek için her hangi bir tuşa basınız... " 8 85;read
+}
+function cikis_yap(){
+dialog --backtitle "$BACKTITLE" --title "Çıkış ?" \
+--yesno "Uygulamadan çıkılsın mı?" 7 60
+# 0 Yes
+# 1 No
+# 255 Cansel
+case $? in
+	0)
+	clear
+	exit
+	 ;;
+	1) 
+	islem
+	;;
+	255) 
+	islem
+	;;
+esac
+}
+
+
+function islem() {
+trap "rm -f $STDOUT; rm -f $STDERR; rm -f $STDMEN; exit" SIGHUP SIGINT SIGTERM
+
+while true
+do
+dialog --backtitle "$BACKTITLE" --title "ANA MENÜ" \
+--menu "Ana Menü Seçenekleri" 15 85 6 \
+KUR "Lxde Masaüstü Ortamını Kur" \
+KALDIR "Lxde Masaüstü Ortamını sistemden KALDIR!" \
+ÇIKIŞ "Uygulamadan Çıkış" 2>"${STDMEN}"
+
+
+SECENEK=$(<"${STDMEN}")
+
+case $SECENEK in
+	KUR) 
+	lxde_kur
+	;;
+	KALDIR) 
+	lxde_kaldir
+	;;
+	ÇIKIŞ) 
+	break
+	read	
+	;;
+esac
+done
+cikis_yap
+}
+# Buradan başlıyoruz.
+karsilama
+islem
+[ -f $STDOUT ] && rm -f $STDOUT
+[ -f $STDERR ] && rm -f $STDERR
+[ -f $STDMEN ] && rm -f $STDMEN
+clear
+

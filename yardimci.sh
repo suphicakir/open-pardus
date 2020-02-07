@@ -6,7 +6,7 @@
 #
 #            Değişkenler
 #
-BACKTITLE="Yardımcım (suphicakir@yandex.com)"
+BACKTITLE="Yardımcım (suphicakir@gmail.com)"
 DIZIN=/tmp/dizin.txt
 KULLANICI=/tmp/kullanici.txt
 GRUP=/tmp/grup.txt
@@ -29,7 +29,7 @@ dialog --clear --backtitle "$BACKTITLE" --title "Dizin Bilgisi" --inputbox "Lüt
 durum=$?
 dizin_yolu=$(<$DIZIN)
 case $durum in
-  0) 
+  0)
     dialog --clear --backtitle "$BACKTITLE" --title "Kullanıcı Bilgisi" --inputbox "Lütfen Kullanıcı Adını giriniz" 8 70 2>$KULLANICI
     kullanici_adi=$(<$KULLANICI)
     dialog --clear --backtitle "$BACKTITLE" --title "Grup Bilgisi" --inputbox "Lütfen Grup Adını giriniz" 8 70 2>$GRUP
